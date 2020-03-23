@@ -51,20 +51,24 @@ public class Condition {
         this.on = on;
     }
 
-    public int increaseCurrentTemperature() {
-        if (currentTemperature == maxTemperature) {
-            return 0;
+    public void increaseCurrentTemperature() {
+        if (currentTemperature >= maxTemperature) {
+            return;
+        }
+        if (currentTemperature <= minTemperature) {
+            return;
         }
         currentTemperature += 1;
-        return currentTemperature;
     }
 
-    public int decreaseCurrentTemperature() {
-        if (currentTemperature == minTemperature) {
-            return 0;
+    public void decreaseCurrentTemperature() {
+        if (currentTemperature >= maxTemperature) {
+            return;
+        }
+        if (currentTemperature <= minTemperature) {
+            return;
         }
         currentTemperature -= 1;
-        return currentTemperature;
     }
 }
 
